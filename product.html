@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Page - Pastel Decor and Furnishings</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .product-card {
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 20px 0;
+            padding: 10px;
+        }
+        .product-image {
+            flex: 1;
+            max-width: 200px;
+            margin-right: 20px;
+        }
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-details {
+            flex: 2;
+        }
+        .product-title {
+            font-size: 20px;
+            color: #333;
+        }
+        .product-price {
+            font-size: 18px;
+            color: #a67463;
+        }
+        .product-seller {
+            font-size: 16px;
+            color: #666;
+        }
+        .product-offer {
+            font-size: 16px;
+            color: #e85843;
+        }
+        .wishlist-button, .buy-button {
+            background-color: #f47a6a;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .wishlist-button:hover, .buy-button:hover {
+            background-color: #e85843;
+        }
+        .price-conversion-button {
+            background-color: #f47a6a;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .price-conversion-button:hover {
+            background-color: #e85843;
+        }
+.sort-bar {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.sort-bar label {
+    font-size: 18px;
+    color: #333;
+    margin-right: 10px;
+}
+
+.sort-bar select {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+.sort-bar select option:checked {
+    background-color: #f47a6a;
+    color: #fff;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pastel Decor and Furnishings</h1>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search..." id="searchInput" style="width: 200px;">
+            <button class="search-button" onclick="filterProducts()">Search</button>
+        </div>
+        <div class="sort-bar">
+            <label for="sort">Sort by Price:</label>
+            <select id="sort">
+                <option value="lowToHigh">Price: Low to High</option>
+                <option value="highToLow">Price: High to Low</option>
+            </select>
+        </div>
+               
+        <ul class="login-signup-icons">
+            <li><a href="login.html"><i class="fas fa-user"></i> Login</a></li>
+            <li><a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+        </ul>
+    </header>
+    <div class="container">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1539975611936-f0d1221cfd16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80" alt="Product 1">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">White Frame with flower sketch</h2>
+                <p class="product-price">Rs. 750</p>
+                <button class="price-conversion-button">Convert to $</button>
+                <button class="price-conversion-button">Convert to Rs.</button>
+                <p class="product-seller">Seller: Pastel Decor Furnishings</p>
+                <p class="product-offer">10% off</p>
+                <button class="wishlist-button"><i class="fas fa-heart"></i> Add to Wishlist</button>
+                <a href="purchase.html"> 
+                    <button class="buy-button">Buy</button> 
+                </a>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1452457005517-a0dd81caca2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1995&q=80" alt="Product 1">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Black frames set of 2</h2>
+                <p class="product-price">Rs. 657</p>
+                <button class="price-conversion-button">Convert to $</button>
+                <button class="price-conversion-button">Convert to Rs.</button>
+                <p class="product-seller">Seller: Pastel Decor Furnishings</p>
+                <p class="product-offer">10% off</p>
+                <button class="wishlist-button"><i class="fas fa-heart"></i> Add to Wishlist</button>
+                <a href="purchase.html"> 
+                    <button class="buy-button">Buy</button> 
+                </a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2009&q=80" alt="Product 1">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Sofa set : black color</h2>
+                <p class="product-price">Rs. 20000</p>
+                <button class="price-conversion-button">Convert to $</button>
+                <button class="price-conversion-button">Convert to Rs.</button>
+                <p class="product-seller">Seller: Pastel Decor Furnishings</p>
+                <p class="product-offer">25% off</p>
+                <button class="wishlist-button"><i class="fas fa-heart"></i> Add to Wishlist</button>
+                <a href="purchase.html"> 
+                    <button class="buy-button">Buy</button> 
+                </a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1563637329737-328724d1394d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1958&q=80" alt="Product 1">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Sofa set : grey color. 2 yellow cushions FREE</h2>
+                <p class="product-price">Rs. 29000</p>
+                <button class="price-conversion-button">Convert to $</button>
+                <button class="price-conversion-button">Convert to Rs.</button>
+                <p class="product-seller">Seller: Pastel Decor Furnishings</p>
+                <p class="product-offer">5% off</p>
+                <button class="wishlist-button"><i class="fas fa-heart"></i> Add to Wishlist</button>
+                <a href="purchase.html"> 
+                    <button class="buy-button">Buy</button> 
+                </a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1606627200742-460b55dd8351?auto=format&fit=crop&q=80&w=1885&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 1">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Circular Mirror with matt gold Frame</h2>
+                <p class="product-price">Rs. 1900</p>
+                <button class="price-conversion-button">Convert to $</button>
+                <button class="price-conversion-button">Convert to Rs.</button>
+                <p class="product-seller">Seller: Pastel Decor Furnishings</p>
+                <p class="product-offer">10% off</p>
+                <button class="wishlist-button"><i class="fas fa-heart"></i> Add to Wishlist</button>
+                <a href="purchase.html"> 
+                    <button class="buy-button">Buy</button> 
+                </a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1592048401715-d18c53553bd0?auto=format&fit=crop&q=80&w=1935&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 1">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Circular Mirror with leather strap</h2>
+                <p class="product-price">Rs. 1500</p>
+                <button class="price-conversion-button">Convert to $</button>
+                <button class="price-conversion-button">Convert to Rs.</button>
+                <p class="product-seller">Seller: Pastel Decor Furnishings</p>
+                <p class="product-offer">10% off</p>
+                <button class="wishlist-button"><i class="fas fa-heart"></i> Add to Wishlist</button>
+                <a href="purchase.html"> 
+                    <button class="buy-button">Buy</button> 
+                </a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=1916&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 1">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Elegant Yellow Chair</h2>
+                <p class="product-price">Rs. 3000</p>
+                <button class="price-conversion-button">Convert to $</button>
+                <button class="price-conversion-button">Convert to Rs.</button>
+                <p class="product-seller">Seller: Pastel Decor Furnishings</p>
+                <p class="product-offer">10% off</p>
+                <button class="wishlist-button"><i class="fas fa-heart"></i> Add to Wishlist</button>
+                <a href="purchase.html"> 
+                    <button class="buy-button">Buy</button> 
+                </a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1582131503261-fca1d1c0589f?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 1">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Wooden Pot</h2>
+                <p class="product-price">Rs. 1200</p>
+                <button class="price-conversion-button">Convert to $</button>
+                <button class="price-conversion-button">Convert to Rs.</button>
+                <p class="product-seller">Seller: Pastel Decor Furnishings</p>
+                <p class="product-offer">20% off</p>
+                <button class="wishlist-button"><i class="fas fa-heart"></i> Add to Wishlist</button>
+                <a href="purchase.html"> 
+                    <button class="buy-button">Buy</button> 
+                </a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 1">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Modern Vase</h2>
+                <p class="product-price">Rs. 2000</p>
+                <button class="price-conversion-button">Convert to $</button>
+                <button class="price-conversion-button">Convert to Rs.</button>
+                <p class="product-seller">Seller: Pastel Decor Furnishings</p>
+                <p class="product-offer">7% off</p>
+                <button class="wishlist-button"><i class="fas fa-heart"></i> Add to Wishlist</button>
+                <a href="purchase.html"> 
+                    <button class="buy-button">Buy</button> 
+                </a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://media.istockphoto.com/id/171345994/photo/antique-vase-clipping-path.jpg?s=1024x1024&w=is&k=20&c=x5MuNkieQzPj89LLhJ-3QL8PHXfYi4IVVvhltBIEYq8=" alt="Product 1">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Ancient Black Vase</h2>
+                <p class="product-price">Rs. 100000</p>
+                <button class="price-conversion-button">Convert to $</button>
+                <button class="price-conversion-button">Convert to Rs.</button>
+                <p class="product-seller">Seller: Pastel Decor Furnishings</p>
+                <p class="product-offer">No Discount</p>
+                <button class="wishlist-button"><i class="fas fa-heart"></i> Add to Wishlist</button>
+                <a href="purchase.html"> 
+                    <button class="buy-button">Buy</button> 
+                </a>
+            </div>
+        </div>
+        <p id="sorry"></p>
+    </div>
+    <footer class="footer">
+        &copy; 2023 Pastel Decor and Furnishings. All rights reserved.
+    </footer>
+
+    <script>
+    //Price conversion
+    document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".price-conversion-button");
+        buttons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                const productCard = button.closest(".product-card");
+                const priceElement = productCard.querySelector(".product-price");
+                const price = priceElement.textContent.trim();
+                if (price.includes("Rs.")) {
+                    const priceInDollars = convertToDollars(price);
+                    priceElement.textContent = priceInDollars;
+                } else {
+                    const priceInRupees = convertToRupees(price);
+                    priceElement.textContent = priceInRupees;
+                }
+            });
+        });
+
+        function convertToDollars(price) {
+            const rupees = parseFloat(price.replace("Rs. ", ""));
+            const dollars = (rupees * 0.0125).toFixed(2);
+            return `$ ${dollars}`;
+        }
+
+        function convertToRupees(price) {
+            const dollars = parseFloat(price.replace("$ ", ""));
+            const rupees = (dollars * 80).toFixed(2);
+            return `Rs. ${rupees}`;
+        }
+        const sortSelect = document.getElementById("sort");
+
+    
+    //to sort the products: High to low or Low to High
+    sortSelect.addEventListener("change", function () {
+        const selectedOption = sortSelect.value;
+
+        if (selectedOption === "lowToHigh") {
+            sortProductsByPrice("lowToHigh");
+        } else if (selectedOption === "highToLow") {
+            sortProductsByPrice("highToLow");
+        }
+    });
+
+        function sortProductsByPrice(order) {
+            const productContainer = document.querySelector(".container");
+            const productCards = [...productContainer.querySelectorAll(".product-card")];
+
+            productCards.sort(function (a, b) {
+                const priceA = parseFloat(a.querySelector(".product-price").textContent.replace("Rs. ", ""));
+                const priceB = parseFloat(b.querySelector(".product-price").textContent.replace("Rs. ", ""));
+
+                if (order === "lowToHigh") {
+                    return priceA - priceB;
+                } else if (order === "highToLow") {
+                    return priceB - priceA;
+                }
+            });
+
+            productContainer.innerHTML = '';
+
+            productCards.forEach(function (card) {
+                productContainer.appendChild(card);
+            });
+        }
+    });
+        function filterProducts() {
+            const searchInput = document.getElementById("searchInput");
+            const searchTerm = searchInput.value.toLowerCase();
+        
+            const productCards = document.querySelectorAll(".product-card");
+        
+            productCards.forEach(function (card) {
+                const productTitle = card.querySelector(".product-title").textContent.toLowerCase();
+        
+                if (productTitle.includes(searchTerm)) {
+                    card.style.display = "block"; 
+                } else {
+                    card.style.display = "none";
+                    document.getElementById("sorry").innerHTML="Sorry! No products fount :-("
+                }
+            });
+        }
+
+    //to sort the products: High to low or Low to High
+    const sortOrderSelect = document.getElementById("sortOrder");
+    sortOrderSelect.addEventListener("change", sortProducts);
+
+    function sortProducts() {
+        const productCards = document.querySelectorAll(".product-card");
+        const sortedProductCards = Array.from(productCards);
+
+        const sortOrder = sortOrderSelect.value;
+        sortedProductCards.sort(function (a, b) {
+            const priceA = parseFloat(a.querySelector(".product-price").textContent.replace(/[^0-9.-]+/g, ""));
+            const priceB = parseFloat(b.querySelector(".product-price").textContent.replace(/[^0-9.-]+/g, ""));
+
+            if (sortOrder === "lowToHigh") {
+                return priceA - priceB;
+            } else {
+                return priceB - priceA;
+            }
+        });
+
+        const container = document.querySelector(".container");
+        container.innerHTML = '';
+        sortedProductCards.forEach(function (card) {
+            container.appendChild(card);
+        });
+    }
+    </script>
+</body>
+</html>

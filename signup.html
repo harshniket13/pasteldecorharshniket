@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up - Pastel Decor and Furnishings</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.signup-form {
+    margin: 20px 0;
+}
+
+.signup-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.signup-form input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 16px; 
+    outline: none; 
+}
+.signup-form input:focus {
+    border-color: #F47A6A; 
+}
+.signup-form button {
+    background-color: #F47A6A;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px; 
+}
+.signup-form button:hover {
+    background-color: #E85843;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pastel Decor and Furnishings</h1>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="login-signup-icons">
+            <li><a href="login.html"><i class="fas fa-user"></i> Login</a></li>
+        </ul>
+    </header>
+    <div class="container">
+        <h2>Create an Account</h2>
+        <form class="signup-form" action="thankyou.html" method="post" onsubmit="return validateForm()">
+
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="firstname" required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lastname" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dateofbirth" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+    <footer class="footer">
+        &copy; 2023 Pastel Decor and Furnishings. All rights reserved.
+    </footer>
+    <script>
+        function validateForm() {
+            let pswd1 = document.getElementById("password").value;
+            let pswd2 = document.getElementById("confirm-password").value;
+    
+            if (pswd1 !== pswd2) {
+                alert("Passwords do not match!");
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>
